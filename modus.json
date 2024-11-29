@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schema.hypermode.com/modus.json",
+  "endpoints": {
+    "default": {
+      "type": "graphql",
+      "path": "/graphql",
+      "auth": "bearer-token"
+    }
+  },
+  "connections": {
+    "openai": {
+      "type": "http",
+      "endpoint": "https://api.openai.com/v1/chat/completions",
+      "headers": {
+        "Authorization": "Bearer {{API_KEY}}"
+      }
+    },
+    "db": {
+      "type": "postgresql",
+      "connString": "postgresql://{{USER}}:{{PASSWORD}}@{{HOST}}:{{PORT}}/{{DATABASE}}?sslmode=require"
+    }
+  }
+}
